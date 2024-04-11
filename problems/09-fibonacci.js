@@ -12,17 +12,29 @@ examples below if you're unsure where to start!
 
 Examples:
 
-fibonacci(1); // 1
-fibonacci(2); // 1
-fibonacci(3); // 2
-fibonacci(4); // 3
-fibonacci(10); // 55
+
 ***********************************************************************/
 
-function fibonacci(n) {
-  // Your code here 
+function fibonacci(n, num = 1, num2 = 0) {
+  if(n === 0){
+    if(num < num2){
+      return num
+    }else{
+      return num2
+    }
+  }
+  if(num < num2){
+    num = num + num2
+  }else{
+    num2 = num + num2
+  }
+  return fibonacci(n -= 1, num, num2)
 }
-  
+
+console.log(fibonacci(1)); // 1
+console.log(fibonacci(2)); // 1
+console.log(fibonacci(3)); // 2
+console.log(fibonacci(4)); // 3
+console.log(fibonacci(10)); // 55
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 module.exports = fibonacci;
-  
